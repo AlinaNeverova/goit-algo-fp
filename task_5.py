@@ -39,7 +39,7 @@ def draw_tree(tree_root, title=""):
     nx.draw(tree, pos=pos, labels=labels, arrows=False, node_size=2500, node_color=colors, font_size=10)
     plt.show()
 
-# Побудова map вузлів (id → Node)
+# Зв'язуємо id вузлів з об'єктами Node для подальшої зміни кольору
 def get_node_map(root):
     node_map = {}
     queue = deque([root])
@@ -67,7 +67,7 @@ def build_graph_dict(node):
             queue.append(current.right)
     return graph
 
-# Градієнт HEX кольорів
+# Градієнт кольорів для візуалізації
 def generate_color_gradient(n, base_color="#1296F0"):
     base = mcolors.to_rgb(base_color)
     gradient = []
